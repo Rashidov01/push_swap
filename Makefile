@@ -6,31 +6,41 @@
 #    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/07/26 19:46:36 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/04 18:38:37 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
+NAME = push_swap
 
-SRC		= push_swap.c
-OBJ		= $(SRC:.c=.o)
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g3
 
-.PHONY: all clean fclean re
+SRC = $(filter-out push_swap.c, $(wildcard *.c))
 
-all: $(NAME)
+OBJ = $(addprefix obj/, $(SRC:.c=.o)) obj/push_swap.o
 
-%.o: %.c
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=1 -c $< -o $@
+LIBFT_PATH = libs/libft
+
+all: obj $(NAME)
+
+obj/%.o: %.c | obj
+	$(CC) $(CFLAGS) -c $< -o $@
+
+obj:
+	mkdir -p obj
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	@make -C $(LIBFT_PATH)
+	@MAKE bonus -C ${LIBFT_PATH}
+	$(CC) $(OBJ) -o $(NAME) $(LIBFT_PATH)/libft.a
 
 clean:
-	rm -f $(OBJ)
+	rm -rf obj
 
 fclean: clean
 	rm -f $(NAME)
+	make fclean -C $(LIBFT_PATH)
 
 re: fclean all
+
+.PHONY: all clean fclean re obj bonus
