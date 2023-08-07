@@ -6,14 +6,14 @@
 #    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/08/04 18:38:37 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/05 15:30:03 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = $(filter-out push_swap.c, $(wildcard *.c))
 
