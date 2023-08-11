@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_p.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/11 21:57:04 by arashido          #+#    #+#             */
+/*   Updated: 2023/08/12 00:40:41 by arashido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+// push a and b
+void	ft_pb(t_stacks *stacks)
+{
+	t_list	*first;
+
+	if (stacks->stack_a == NULL)
+		return ;
+	first = stacks->stack_a;
+	stacks->stack_a = stacks->stack_a->next;
+	first->next = stacks->stack_b;
+	stacks->stack_b = first;
+}
+
+void	ft_pa(t_stacks *stacks)
+{
+	t_list	*first;
+
+	if (stacks->stack_a == NULL)
+		return ;
+	first = stacks->stack_b;
+	stacks->stack_b = stacks->stack_a->next;
+	first->next = stacks->stack_a;
+	stacks->stack_a = first;
+}

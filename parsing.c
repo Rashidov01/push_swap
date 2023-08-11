@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:58:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/07 21:10:05 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 01:17:56 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

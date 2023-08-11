@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/07 21:22:53 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 01:18:06 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int	error(int argc, char **argv, t_list **stack_a)
 		write(2, "Error: No valid input provided.\n", 33);
 		return (1);
 	}
-	if (!check_duplicate(split))
-	{
-		write(2, "Duplicate found\n", 16);
-		exit(1);
-	}
 	while (split[i])
 	{
+		if (check_digit_str(split[i]) == 0)
+		{
+			printf("Invalid argument found\n");
+			exit(1);
+		}
 		num = ft_atoi(split[i]);
 		if (num >= INT_MIN && num <= INT_MAX)
 			tmp = ft_lstnew(num);
@@ -59,6 +59,11 @@ int	error(int argc, char **argv, t_list **stack_a)
 		}
 		ft_lstadd_back(stack_a, tmp);
 		i++;
+	}
+	if (!check_duplicate(split))
+	{
+		write(2, "Duplicate found\n", 16);
+		exit(1);
 	}
 	return (0);
 }

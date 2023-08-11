@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:05:31 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/07 21:34:52 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/08 19:48:54 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,22 @@ bool	has_empty_quotes(int argc, char **argv)
 		i++;
 	}
 	return (false);
+}
+
+int	check_digit_str(const char *str)
+{
+	int i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }

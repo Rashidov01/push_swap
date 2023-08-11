@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/08/07 21:36:44 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/12 01:15:57 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
