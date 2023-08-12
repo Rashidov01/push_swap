@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:58:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 13:53:19 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:14:56 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,8 @@ char	**split_argv(char **argv)
 void	if_sorted(t_stacks *stacks)
 {
 	t_list	*current_a;
-	t_list	*current_b;
 
-	if ((stacks->stack_a == NULL || stacks->stack_a->next == NULL)
-		&& (stacks->stack_b == NULL || stacks->stack_b->next == NULL))
+	if (stacks->stack_a == NULL || stacks->stack_a->next == NULL)
 		return ;
 	current_a = stacks->stack_a;
 	while (current_a->next)
@@ -93,12 +91,5 @@ void	if_sorted(t_stacks *stacks)
 		if (current_a->content > current_a->next->content)
 			return ;
 		current_a = current_a->next;
-	}
-	current_b = stacks->stack_b;
-	while (current_b->next)
-	{
-		if (current_b->content > current_b->next->content)
-			return ;
-		current_b = current_b->next;
 	}
 }

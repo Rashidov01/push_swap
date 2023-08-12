@@ -6,13 +6,14 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 13:49:31 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:16:12 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "./libs/libft/libft.h"
+# include "./libs/printf/ft_printf.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdint.h>

@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:06:13 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 13:49:28 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:16:51 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	display_stack(t_list *a)
 	t_list	*tmp;
 
 	tmp = a;
-	printf("=======Stack======\n");
+	ft_printf("=======Stack======\n");
 	while (tmp)
 	{
-		printf("num: %d\n", tmp->content);
+		ft_printf("num: %d\n", tmp->content);
 		tmp = tmp->next;
 	}
-	printf("=======END=======\n\n");
+	ft_printf("=======END=======\n\n");
 }
 
 int	main(int argc, char **argv)

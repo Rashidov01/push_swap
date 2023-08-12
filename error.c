@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 13:46:10 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 14:25:27 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,58 +29,62 @@ void	ft_free_arr(char **p)
 	}
 }
 
-int	error(int argc, char **argv, t_list **stack_a)
+static int	ft_norm(int arg_index, int ind)
 {
-	char		**split;
-	int			i;
-	int			arg_index;
-	t_list		*tmp;
-	long int	num;
+	if (arg_index == ind)
+	{
+		write(2, "Error: No valid input provided.\n", 33);
+		return (1);
+	}
+	return (0);
+}
 
-	arg_index = 1;
-	if (has_empty_quotes(argc, argv))
-	{
-		write(2, "Error: Empty quotes detected.\n", 30);
-		exit(1);
-	}
-	while (arg_index < argc && ft_strspn(argv[arg_index],
-			" ") == ft_strlen(argv[arg_index]))
-		arg_index++;
-	if (arg_index == argc)
-	{
-		write(2, "Error: No valid input provided.\n", 33);
-		return (1);
-	}
-	i = arg_index;
-	split = split_argv(argv + arg_index);
+static void	ft_norm2(char *str)
+{
+	fprintf(stderr, "%s\n", str);
+	exit(1);
+}
+
+static void	ft_norm3(char **split, long int num, t_list *tmp, t_list **stack_a)
+{
+	int	i;
+
 	i = 0;
-	if (split == NULL)
-	{
-		write(2, "Error: No valid input provided.\n", 33);
-		return (1);
-	}
 	while (split[i])
 	{
 		if (check_digit_str(split[i]) == 0)
-		{
-			printf("Invalid argument found\n");
-			exit(1);
-		}
+			ft_norm2("Invalid argument found");
 		num = ft_atoi(split[i]);
 		if (num >= INT_MIN && num <= INT_MAX)
 			tmp = ft_lstnew(num);
 		else
-		{
-			printf("Found invalid number\n");
-			exit(1);
-		}
+			ft_norm2("Found invalid argv");
 		ft_lstadd_back(stack_a, tmp);
 		i++;
 	}
+}
+
+int	error(int argc, char **argv, t_list **stack_a)
+{
+	char		**split;
+	int			arg_index;
+	t_list		*tmp;
+	long int	num;
+
+	tmp = NULL;
+	num = 0;
+	arg_index = 1;
+	if (has_empty_quotes(argc, argv))
+		ft_norm2("Error: Empty quotes detected");
+	while (arg_index < argc && ft_strspn(argv[arg_index],
+			" ") == ft_strlen(argv[arg_index]))
+		arg_index++;
+	ft_norm(arg_index, argc);
+	split = split_argv(argv + arg_index);
+	if (split == NULL)
+		return (write(2, "Error: No valid input provided.\n", 33), 1);
+	ft_norm3(split, num, tmp, stack_a);
 	if (!check_duplicate(split))
-	{
-		write(2, "Duplicate found\n", 16);
-		exit(1);
-	}
+		ft_norm2("Duplicate found");
 	return (0);
 }
