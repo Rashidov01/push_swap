@@ -6,28 +6,11 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:05:31 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/08 19:48:54 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:52:48 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_free_arr(char **p)
-{
-	int	i;
-
-	i = 0;
-	while (p != NULL && p[i])
-	{
-		free(p[i]);
-		i++;
-	}
-	if (p)
-	{
-		free(p);
-		p = NULL;
-	}
-}
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -82,7 +65,7 @@ bool	has_empty_quotes(int argc, char **argv)
 
 int	check_digit_str(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')

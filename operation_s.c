@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 21:56:33 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 01:16:11 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:54:34 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

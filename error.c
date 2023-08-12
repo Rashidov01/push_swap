@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 01:18:06 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:46:10 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_free_arr(char **p)
+{
+	int	i;
+
+	i = 0;
+	while (p != NULL && p[i])
+	{
+		free(p[i]);
+		i++;
+	}
+	if (p)
+	{
+		free(p);
+		p = NULL;
+	}
+}
 
 int	error(int argc, char **argv, t_list **stack_a)
 {

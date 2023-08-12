@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
+/*   Updated: 2023/08/12 13:49:31 by arashido         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "./libs/libft/libft.h"
@@ -28,6 +40,7 @@ char		*join_argv(char **argv);
 char		*join_argv(char **argv);
 char		**split_argv(char **argv);
 void		ft_free_arr(char **p);
+void		if_sorted(t_stacks *stacks);
 
 // operations
 void		ft_sa(t_list **a);

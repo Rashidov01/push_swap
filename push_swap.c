@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:06:13 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 01:16:55 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:49:28 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

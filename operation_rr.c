@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_rr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 21:55:46 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 01:16:07 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:44:54 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
