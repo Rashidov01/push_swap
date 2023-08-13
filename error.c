@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 14:25:27 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/12 22:59:45 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ft_norm(int arg_index, int ind)
 
 static void	ft_norm2(char *str)
 {
-	fprintf(stderr, "%s\n", str);
+	write(2, str, ft_strlen(str));
 	exit(1);
 }
 
@@ -60,6 +60,8 @@ static void	ft_norm3(char **split, long int num, t_list *tmp, t_list **stack_a)
 		else
 			ft_norm2("Found invalid argv");
 		ft_lstadd_back(stack_a, tmp);
+		// if(if_sorted(*stack_a) == 1)
+		// 	printf("stack is sorted");
 		i++;
 	}
 }

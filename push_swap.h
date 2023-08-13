@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 14:16:12 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:55:37 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ typedef struct s_stack
 	t_list	*stack_b;
 	int		size;
 	int		*array;
+	int		size_a;
+	int		size_b;
 }			t_stacks;
 
+// parsing
 bool		check_duplicate(char **argv);
 bool		is_empty_quote(const char *str);
 bool		has_empty_quotes(int argc, char **argv);
@@ -41,7 +44,7 @@ char		*join_argv(char **argv);
 char		*join_argv(char **argv);
 char		**split_argv(char **argv);
 void		ft_free_arr(char **p);
-void		if_sorted(t_stacks *stacks);
+int			if_sorted(t_list *stacks);
 
 // operations
 void		ft_sa(t_list **a);
@@ -58,4 +61,8 @@ void		ft_rrr(t_list **a, t_list **b);
 
 void		ft_pb(t_stacks *stacks);
 void		ft_pa(t_stacks *stacks);
+
+// radix sort
+int			find_the_smallest(t_list *stack_a);
+void		sort_small_stack(t_stacks *stacks);
 #endif

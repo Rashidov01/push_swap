@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:06:13 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 14:16:51 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/13 12:58:13 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 	}
 	error(argc, argv, &(stacks->stack_a));
 	display_stack(stacks->stack_a);
-	ft_rrr(&stacks->stack_a, &stacks->stack_b);
+	sort_small_stack(stacks);
 	display_stack(stacks->stack_a);
 	return (0);
 }
