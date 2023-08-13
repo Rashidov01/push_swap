@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_r.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arashido <avazbekrashidov6@gmail.com>      +#+  +:+       +#+        */
+/*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 17:28:28 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 01:16:04 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:15:59 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_ra(t_list **a)
 	last->next = first;
 	*a = (*a)->next;
 	first->next = NULL;
+	ft_printf("ra\n");
 }
 
 void	ft_rb(t_list **b)

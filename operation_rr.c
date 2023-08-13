@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 21:55:46 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/13 12:58:01 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:24:47 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_rra(t_list **a)
 	first->next = *a;
 	*a = first;
 	last->next = NULL;
+	ft_printf("rra\n");
 }
 
 void	ft_rrb(t_list **b)
@@ -47,10 +48,12 @@ void	ft_rrb(t_list **b)
 	first->next = *b;
 	*b = first;
 	last->next = NULL;
+	ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_list **a, t_list **b)
 {
 	ft_rra(a);
 	ft_rrb(b);
+	ft_printf("rrr\n");
 }

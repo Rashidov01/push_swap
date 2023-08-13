@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 21:57:04 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/13 12:57:54 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:16:01 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_pb(t_stacks *stacks)
 	stacks->stack_a = stacks->stack_a->next;
 	first->next = stacks->stack_b;
 	stacks->stack_b = first;
+	ft_printf("pb\n");
 }
 
 void	ft_pa(t_stacks *stacks)
@@ -35,4 +36,5 @@ void	ft_pa(t_stacks *stacks)
 	stacks->stack_b = stacks->stack_b->next;
 	first->next = stacks->stack_a;
 	stacks->stack_a = first;
+	ft_printf("pa\n");
 }
