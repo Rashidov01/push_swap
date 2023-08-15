@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:58:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/12 20:21:18 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/15 14:13:53 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,18 +79,13 @@ char	**split_argv(char **argv)
 	return (arr);
 }
 
-int	if_sorted(t_list *stack_a)
+int	is_sorted(t_list *stack_a)
 {
-	t_list	*current_a;
-
-	if (stack_a == NULL || stack_a->next == NULL)
-		return (1);
-	current_a = stack_a;
-	while (current_a->next)
+	while (stack_a && stack_a->next)
 	{
-		if (current_a->content > current_a->next->content)
+		if (stack_a->content > stack_a->next->content)
 			return (0);
-		current_a = current_a->next;
+		stack_a = stack_a->next;
 	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/08/12 14:20:01 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/14 23:51:14 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ obj:
 $(NAME): $(OBJ)
 	@make -C $(LIBFT_PATH)
 	@make -C $(PRINTF_PATH)
-	@MAKE bonus -C ${LIBFT_PATH}
+	@make bonus -C ${LIBFT_PATH}
 	$(CC) $(OBJ) -o $(NAME) $(LIBFT_PATH)/libft.a $(PRINTF_PATH)/ft_printf.a
 
 clean:

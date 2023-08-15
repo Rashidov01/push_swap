@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/13 13:43:14 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/15 12:10:49 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ typedef struct s_stack
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		size;
-	int		*array;
-	int		size_a;
-	int		size_b;
 }			t_stacks;
 
 // parsing
@@ -44,7 +40,8 @@ char		*join_argv(char **argv);
 char		*join_argv(char **argv);
 char		**split_argv(char **argv);
 void		ft_free_arr(char **p);
-int			if_sorted(t_list *stacks);
+int			is_sorted(t_list *stack_a);
+int			get_min_pos(t_list *stack_a, int min);
 
 // operations
 void		ft_sa(t_list **a);
@@ -64,5 +61,8 @@ void		ft_pa(t_stacks *stacks);
 
 // radix sort
 int			find_the_smallest(t_list *stack_a);
-void		sort_small_stack(t_stacks *stacks);
+void		sort_2(t_list **stack_a);
+void		sort_3(t_list **stack_a);
+void		sort_4(t_stacks *stacks);
+void		sort_5(t_stacks *stacks);
 #endif
