@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 13:58:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/15 14:13:53 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:32:15 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ bool	check_duplicate(char **argv)
 		j = i + 1;
 		while (argv[j])
 		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-				return (0);
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				return (false);
 			j++;
 		}
 	}
-	return (1);
+	return (true);
 }
 
 char	*join_argv(char **argv)
@@ -69,13 +69,13 @@ char	**split_argv(char **argv)
 	str = join_argv(argv);
 	arr = ft_split(str, ' ');
 	i = 0;
+	free(str);
 	while (arr[i] != NULL)
 	{
 		whitespace_count = ft_strspn(arr[i], " \t\n\v\f\r");
 		arr[i] += whitespace_count;
 		i++;
 	}
-	free(str);
 	return (arr);
 }
 

@@ -6,53 +6,47 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:06:13 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/15 13:09:36 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:48:35 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_list(t_list *lst)
+static void	full_sort(t_stacks *stacks)
 {
-	t_list	*tmp;
+	int	stack_size;
 
-	while (lst)
-	{
-		tmp = lst;
-		lst = lst->next;
-		free(tmp);
-	}
-}
-
-void	display_stack(t_list *a)
-{
-	t_list	*tmp;
-
-	tmp = a;
-	ft_printf("=======Stack======\n");
-	while (tmp)
-	{
-		ft_printf("num: %d\n", tmp->content);
-		tmp = tmp->next;
-	}
-	ft_printf("=======END=======\n\n");
+	stack_size = ft_lstsize(stacks->stack_a);
+	if (is_sorted(stacks->stack_a))
+		return ;
+	else if (stack_size == 2)
+		sort_2(&stacks->stack_a);
+	else if (stack_size == 3)
+		sort_3(&stacks->stack_a);
+	else if (stack_size == 4)
+		sort_4(stacks);
+	else if (stack_size == 5)
+		sort_5(stacks);
+	else
+		big_sort(stacks);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stacks	*stacks;
 
-	stacks = (t_stacks *)malloc(sizeof(t_stacks));
-	stacks->stack_a = NULL;
 	if (argc < 2)
 	{
-		write(2, "less parameter\n", 16);
-		exit(1);
+		return (0);
+		exit(0);
 	}
-	error(argc, argv, &(stacks->stack_a));
-	display_stack(stacks->stack_a);
-	sort_3(&stacks->stack_a);
-	display_stack(stacks->stack_a);
+	stacks = malloc(sizeof(t_stacks));
+	if (!stacks)
+		return (0);
+	stacks->stack_a = NULL;
+	stacks->stack_b = NULL;
+	error(argc, argv, stacks);
+	full_sort(stacks);
 	ft_free_list(stacks->stack_a);
 	free(stacks);
 	return (0);

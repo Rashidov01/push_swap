@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:05:31 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/15 13:09:24 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:48:02 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,18 @@ bool	has_empty_quotes(int argc, char **argv)
 		i++;
 	}
 	return (false);
+}
+
+void	display_stack(t_list *a)
+{
+	t_list	*tmp;
+
+	tmp = a;
+	ft_printf("=======Stack======\n");
+	while (tmp)
+	{
+		ft_printf("num: %d\n", tmp->content);
+		tmp = tmp->next;
+	}
+	ft_printf("=======END=======\n\n");
 }

@@ -6,17 +6,22 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 13:08:29 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/15 13:09:10 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:37:36 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	handle_overflow(long long int tmp, long long int result)
+static void	handle_overflow(long long int tmp, long long int result,
+		t_stacks *stack, char **split)
 {
 	if (tmp > result)
 	{
 		write(2, "Error\n", 6);
+		free_split(split);
+		ft_free_list(stack->stack_a);
+		ft_free_list(stack->stack_b);
+		free(stack);
 		exit(1);
 	}
 }
@@ -40,7 +45,7 @@ static int	get_sign(const char *str, int *index)
 	return (sign);
 }
 
-long long int	ft_atoi(const char *str)
+long long int	ft_atoi2(const char *str, t_stacks *stack, char **split)
 {
 	long long int	tmp;
 	long long int	result;
@@ -56,7 +61,7 @@ long long int	ft_atoi(const char *str)
 	{
 		tmp = result;
 		result = (result * 10) + str[index] - '0';
-		handle_overflow(tmp, result);
+		handle_overflow(tmp, result, stack, split);
 		index++;
 	}
 	return (result * sign);
