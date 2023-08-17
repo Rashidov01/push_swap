@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:23:05 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 13:36:23 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:27:28 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_sort(char **copy)
 	char	*temp;
 	int		len;
 
-	len = ft_strlen(*copy);
+	len = ft_array_len(copy);
 	i = 0;
 	while (i < len - 1)
 	{
@@ -63,7 +63,8 @@ char	**replace_with_index(char **og_array)
 		}
 		i++;
 	}
-	return (copy_array);
+	free_array(copy_array);
+	return (og_array);
 }
 
 void	big_sort(t_stacks *stacks)
@@ -76,12 +77,12 @@ void	big_sort(t_stacks *stacks)
 
 	i = 0;
 	temp = stacks->stack_a;
-	length = ft_lstsize(temp) - 1;
+	length = ft_lstsize(temp);
 	bits = total_bits(stacks->stack_a);
 	while (i < bits)
 	{
 		j = -1;
-		while (++j <= length)
+		while (++j < length)
 		{
 			temp = stacks->stack_a;
 			if (!(temp->content >> i & 1))

@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 14:46:49 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:36:56 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ static int	check_argv(int arg_index, int ind)
 	return (0);
 }
 
-static void	ft_norm(char **split, long long num, t_list *tmp, t_stacks *stack)
+static void	str_split(char **split, long long num, t_list *tmp, t_stacks *stack)
 {
 	int	i;
 
 	i = 0;
+	split = replace_with_index(split);
 	while (split[i])
 	{
 		if (check_digit_str(split[i]) == 0)
@@ -87,7 +88,7 @@ int	error(int argc, char **argv, t_stacks *stack)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	ft_norm(split, num, tmp, stack);
+	str_split(split, num, tmp, stack);
 	check_duplicate_fn(split, stack);
 	free_split(split);
 	return (0);

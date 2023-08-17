@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_methods.c                                    :+:      :+:    :+:   */
+/*   arr_methods.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 21:22:08 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 14:27:41 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:35:53 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_array_len(char **str)
+int	ft_array_len(char **str)
 {
 	int	str_rows;
 

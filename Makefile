@@ -6,7 +6,7 @@
 #    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/08/17 12:41:43 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/17 15:07:39 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = $(filter-out push_swap.c, $(wildcard *.c))
+SRC = array_methods.c error.c free_functions.c parsing.c utils.c \
+	  operation_p.c operation_r.c operation_rr.c operation_s.c \
+	  push_swap_atoi.c push_swap_libft.c radix.c sort_small_stack_norm.c sort_small_stack.c \
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o)) obj/push_swap.o
 

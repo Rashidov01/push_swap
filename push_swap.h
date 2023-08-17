@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 14:47:15 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 18:32:45 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,5 @@ char			**dup_array(char **src);
 void			free_array(char **array);
 void			free_stack(t_stacks *stack);
 void			free_all(t_stacks *stack);
+int				ft_array_len(char **str);
 #endif
