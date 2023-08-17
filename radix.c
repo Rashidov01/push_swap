@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:23:05 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 18:27:28 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 21:48:44 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,32 +39,37 @@ char	**ft_sort(char **copy)
 	return (copy);
 }
 
-char	**replace_with_index(char **og_array)
+static void	ft_norm2(int i, int j, char **og)
+{
+	free(og[i]);
+	og[i] = ft_itoa(j);
+}
+
+char	**replace_with_index(char **og, t_stacks *st)
 {
 	int		i;
 	int		j;
-	char	**copy_array;
+	char	**cpa;
 
-	copy_array = dup_array(og_array);
-	copy_array = ft_sort(copy_array);
+	cpa = dup_array(og);
+	cpa = ft_sort(cpa);
 	i = 0;
-	while (og_array[i])
+	while (og[i])
 	{
 		j = 0;
-		while (copy_array[j])
+		while (cpa[j])
 		{
-			if (ft_atoi(og_array[i]) == ft_atoi(copy_array[j]))
+			if (ft_atoi3(og[i], st, cpa, og) == ft_atoi3(cpa[j], st, cpa, og))
 			{
-				free(og_array[i]);
-				og_array[i] = ft_itoa(j);
+				ft_norm2(i, j, og);
 				break ;
 			}
 			j++;
 		}
 		i++;
 	}
-	free_array(copy_array);
-	return (og_array);
+	free_array(cpa);
+	return (og);
 }
 
 void	big_sort(t_stacks *stacks)

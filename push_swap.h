@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 18:32:45 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 21:29:39 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,10 @@ void			big_sort(t_stacks *stacks);
 int				total_bits(t_list *stack_a);
 char			**ft_sort(char **copy);
 size_t			ft_strcpy(char *dst, const char *src);
-char			**replace_with_index(char **og_array);
+char			**replace_with_index(char **og_array, t_stacks *stack);
 long long int	ft_atoi2(const char *str, t_stacks *stack, char **split);
+long long int	ft_atoi3(const char *str, t_stacks *stack, char **split,
+					char **og_split);
 void			free_split(char **str);
 void			ft_free_list(t_list *lst);
 char			**dup_array(char **src);
@@ -79,4 +81,5 @@ void			free_array(char **array);
 void			free_stack(t_stacks *stack);
 void			free_all(t_stacks *stack);
 int				ft_array_len(char **str);
+void			sign_check(char **split, t_stacks *stack);
 #endif

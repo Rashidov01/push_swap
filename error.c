@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 08:54:43 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 18:36:56 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 21:29:26 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,10 @@ static void	str_split(char **split, long long num, t_list *tmp, t_stacks *stack)
 	int	i;
 
 	i = 0;
-	split = replace_with_index(split);
+	sign_check(split, stack);
+	split = replace_with_index(split, stack);
 	while (split[i])
 	{
-		if (check_digit_str(split[i]) == 0)
-		{
-			write(2, "Error\n", 6);
-			free_split(split);
-			free_stack(stack);
-			exit(1);
-		}
 		num = ft_atoi2(split[i], stack, split);
 		if (num >= INT_MIN && num <= INT_MAX)
 			tmp = ft_lstnew(num);

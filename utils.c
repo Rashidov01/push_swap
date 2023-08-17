@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:05:31 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 14:48:02 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/17 21:36:20 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,22 @@ void	display_stack(t_list *a)
 		tmp = tmp->next;
 	}
 	ft_printf("=======END=======\n\n");
+}
+
+void	sign_check(char **split, t_stacks *stack)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		if (check_digit_str(split[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			free_split(split);
+			free_stack(stack);
+			exit(1);
+		}
+		i++;
+	}
 }
