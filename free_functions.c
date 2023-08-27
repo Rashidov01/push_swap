@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:47:47 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 14:55:59 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:42:06 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,18 @@ void	ft_free_list(t_list *lst)
 		tmp = lst;
 		lst = lst->next;
 		free(tmp);
+	}
+}
+
+void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	if (array)
+	{
+		while (array[i])
+			free(array[i++]);
+		free(array);
 	}
 }

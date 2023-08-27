@@ -6,7 +6,7 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:45:15 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 21:29:39 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/26 18:40:32 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ void			free_stack(t_stacks *stack);
 void			free_all(t_stacks *stack);
 int				ft_array_len(char **str);
 void			sign_check(char **split, t_stacks *stack);
+void			bullshit(char **og, char **cpa, t_stacks *st);
 #endif

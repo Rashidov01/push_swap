@@ -6,38 +6,11 @@
 /*   By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 20:23:05 by arashido          #+#    #+#             */
-/*   Updated: 2023/08/17 21:48:44 by arashido         ###   ########.fr       */
+/*   Updated: 2023/08/26 18:40:07 by arashido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-char	**ft_sort(char **copy)
-{
-	int		i;
-	int		j;
-	char	*temp;
-	int		len;
-
-	len = ft_array_len(copy);
-	i = 0;
-	while (i < len - 1)
-	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (ft_atoi(copy[i]) > ft_atoi(copy[j]))
-			{
-				temp = copy[i];
-				copy[i] = copy[j];
-				copy[j] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-	return (copy);
-}
 
 static void	ft_norm2(int i, int j, char **og)
 {
@@ -45,29 +18,42 @@ static void	ft_norm2(int i, int j, char **og)
 	og[i] = ft_itoa(j);
 }
 
+char	**og_calc(char **og, char **cpa, t_stacks *st, long long *num)
+{
+	num[3] = 0;
+	while (og[num[3]])
+	{
+		num[4] = 0;
+		while (cpa[num[4]])
+		{
+			num[0] = ft_atoi3(og[num[3]], st, cpa, og);
+			num[1] = ft_atoi3(cpa[num[4]], st, cpa, og);
+			if ((num[0] >= INT_MIN && num[0] <= INT_MAX) || (num[1] >= INT_MIN
+					&& num[1] <= INT_MAX))
+			{
+				if (num[0] == num[1])
+				{
+					ft_norm2(num[3], num[4], og);
+					break ;
+				}
+			}
+			else
+				bullshit(og, cpa, st);
+			num[4]++;
+		}
+		num[3]++;
+	}
+	return (og);
+}
+
 char	**replace_with_index(char **og, t_stacks *st)
 {
-	int		i;
-	int		j;
-	char	**cpa;
+	char		**cpa;
+	long long	num[4];
 
 	cpa = dup_array(og);
 	cpa = ft_sort(cpa);
-	i = 0;
-	while (og[i])
-	{
-		j = 0;
-		while (cpa[j])
-		{
-			if (ft_atoi3(og[i], st, cpa, og) == ft_atoi3(cpa[j], st, cpa, og))
-			{
-				ft_norm2(i, j, og);
-				break ;
-			}
-			j++;
-		}
-		i++;
-	}
+	og = og_calc(og, cpa, st, num);
 	free_array(cpa);
 	return (og);
 }

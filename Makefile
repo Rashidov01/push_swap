@@ -6,7 +6,7 @@
 #    By: arashido <arashido@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/24 11:26:50 by arashido          #+#    #+#              #
-#    Updated: 2023/08/17 21:32:02 by arashido         ###   ########.fr        #
+#    Updated: 2023/08/26 18:39:21 by arashido         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = arr_methods.c error.c free_functions.c parsing.c utils.c \
+SRC = arr_methods.c error.c free_functions.c parsing.c utils.c sort.c\
 	  operation_p.c operation_r.c operation_rr.c operation_s.c push_swap_atoi2.c\
 	  push_swap_atoi.c push_swap_libft.c radix.c sort_small_stack_norm.c sort_small_stack.c \
 
